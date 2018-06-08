@@ -1,0 +1,869 @@
+{
+  "name": "_default_realm",
+  "id": 56055,
+  "description": "This realm can be used with the sample programs for any of the language bindings.  Each executable (or class) corresponds to an application in this realm.  Note that realm application names are all lowercase which corresponds to the application strings used in the sample connect call.\n\nBy default all the application instances use a shared-memory transport.  To use other transports, supply an identifier string using the \"--identifier\" command line argument with a string of \"\u003ctport\u003e\".",
+  "version": 1,
+  "realm_server_version": "5.2.1   V4",
+  "realm_uuid": "9b8caa52-20a2-4744-93ea-f2c88a0a90ce",
+  "server_uuid": "a4a9fc0f-0e5b-4539-a1d3-78cece1193e4",
+  "server_time": "1502495270940",
+  "properties": {
+    "client_monitor_sample_interval": 60,
+    "client_server_heartbeat": 60,
+    "client_timeout_server": 180,
+    "manage_all_formats": false,
+    "openssl_cipher_suites": "ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384",
+    "openssl_cipher_suites_custom": "",
+    "openssl_cipher_suites_selection": "defaults",
+    "openssl_context_options": "0x17134000",
+    "openssl_context_options_custom": "0x17134000",
+    "openssl_context_options_selection": "defaults",
+    "realm_is_secure": false,
+    "server_client_heartbeat": 60,
+    "server_timeout_client": 3600,
+    "warn_about_insecure_transports": false,
+    "max_deployment_history": 0
+  },
+  "applications": [
+    {
+      "last_modified": "2018-03-14T07:44:05.0072456Z",
+      "last_modified_millis": 1521013445007,
+      "last_modified_by": "SrvTibcoBW_FTL",
+      "name": "_GroupClient",
+      "id": 1041,
+      "description": "",
+      "manage_all_formats": false,
+      "preload_format_names": [],
+      "endpoints": [
+        {
+          "name": "_Common",
+          "id": 1043
+        }
+      ],
+      "instances": [
+        {
+          "name": "default",
+          "id": 1039,
+          "description": "",
+          "matcher": {
+            "host": "",
+            "identifier": ""
+          },
+          "endpoints": [
+            {
+              "dynamic_durable": {},
+              "subscribers": [],
+              "list_name": "__GroupClient_@_default_@__Common",
+              "endpoint_name": "_Common"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "last_modified": "2018-03-14T07:44:05.0072456Z",
+      "last_modified_millis": 1521013445007,
+      "last_modified_by": "SrvTibcoBW_FTL",
+      "name": "bwadmin",
+      "id": 21135,
+      "description": "",
+      "manage_all_formats": false,
+      "preload_format_names": [],
+      "endpoints": [
+        {
+          "name": "bwadmin-endpoint",
+          "id": 21139
+        }
+      ],
+      "instances": [
+        {
+          "name": "default",
+          "id": 21137,
+          "description": "The default instance is used when no other instance's identifiers match.",
+          "matcher": {
+            "host": "",
+            "identifier": ""
+          },
+          "endpoints": [
+            {
+              "dynamic_durable": {},
+              "subscribers": [],
+              "list_name": "_bwadmin_@_default_@_bwadmin-endpoint",
+              "endpoint_name": "bwadmin-endpoint"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "last_modified": "2018-03-14T07:44:05.0072456Z",
+      "last_modified_millis": 1521013445007,
+      "last_modified_by": "SrvTibcoBW_FTL",
+      "name": "_GroupServer",
+      "id": 1047,
+      "description": "",
+      "manage_all_formats": false,
+      "preload_format_names": [],
+      "endpoints": [
+        {
+          "name": "_Common",
+          "id": 1049
+        }
+      ],
+      "instances": [
+        {
+          "name": "SingleGroupServer",
+          "id": 21141,
+          "description": "",
+          "matcher": {
+            "host": "",
+            "identifier": "Primary"
+          },
+          "endpoints": [
+            {
+              "dynamic_durable": {},
+              "subscribers": [],
+              "list_name": "__GroupServer_@_SingleGroupServer_@__Common",
+              "endpoint_name": "_Common"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "last_modified": "2018-03-22T14:18:37.9610522Z",
+      "last_modified_millis": 1521728317961,
+      "last_modified_by": "SrvTibcoBW_FTL",
+      "name": "bwapplication",
+      "id": 31043,
+      "description": "ftl application description",
+      "manage_all_formats": false,
+      "preload_format_names": [],
+      "endpoints": [
+        {
+          "name": "SyncResponse_ep",
+          "id": 31049,
+          "store": "SyncDirect",
+          "cluster": "ESBStoreQuorum"
+        },
+        {
+          "name": "SyncRequestDyn_ep",
+          "id": 46059,
+          "store": "DynSyncDirect",
+          "cluster": "ESBStoreQuorum"
+        },
+        {
+          "name": "SyncRequest_ep",
+          "id": 31047,
+          "store": "SyncDirect",
+          "cluster": "ESBStoreQuorum"
+        },
+        {
+          "name": "SyncResponseDyn_ep",
+          "id": 46057,
+          "store": "DynSyncDirect",
+          "cluster": "ESBStoreQuorum"
+        }
+      ],
+      "instances": [
+        {
+          "name": "default",
+          "id": 31045,
+          "description": "",
+          "matcher": {
+            "host": "",
+            "identifier": ""
+          },
+          "endpoints": [
+            {
+              "dynamic_durable": {},
+              "subscribers": [],
+              "list_name": "_bwapplication_@_default_@_SyncResponse_ep",
+              "endpoint_name": "SyncResponse_ep"
+            },
+            {
+              "dynamic_durable": {
+                "template": "DynApportion"
+              },
+              "subscribers": [],
+              "list_name": "_bwapplication_@_default_@_SyncRequestDyn_ep",
+              "endpoint_name": "SyncRequestDyn_ep"
+            },
+            {
+              "dynamic_durable": {},
+              "subscribers": [],
+              "list_name": "_bwapplication_@_default_@_SyncRequest_ep",
+              "endpoint_name": "SyncRequest_ep"
+            },
+            {
+              "dynamic_durable": {
+                "template": "DynApportion"
+              },
+              "subscribers": [],
+              "list_name": "_bwapplication_@_default_@_SyncResponseDyn_ep",
+              "endpoint_name": "SyncResponseDyn_ep"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "clusters": [
+    {
+      "last_modified": "2018-03-14T07:44:05.0072456Z",
+      "last_modified_millis": 1521013445007,
+      "last_modified_by": "SrvTibcoBW_FTL",
+      "name": "Realm Persistence Cluster",
+      "id": 21145,
+      "description": "",
+      "client_pserver_heartbeat": 2,
+      "client_timeout_pserver": 5,
+      "pserver_pserver_heartbeat": 0.5,
+      "pserver_timeout_pserver": 3,
+      "dr_enabled": false,
+      "primary_set": "_setA",
+      "stores": null,
+      "pserver_sets": [
+        {
+          "name": "_setA",
+          "id": 21147,
+          "description": "",
+          "role": "persist",
+          "pservers": [
+            {
+              "last_modified": "2018-03-14T07:44:05.0072456Z",
+              "last_modified_millis": 1521013445007,
+              "last_modified_by": "SrvTibcoBW_FTL",
+              "name": "pserver",
+              "id": 21149,
+              "description": "",
+              "weight": 10,
+              "client_transports": [
+                {
+                  "transport": {
+                    "last_modified": "0001-01-01T00:00:00Z",
+                    "last_modified_millis": 0,
+                    "last_modified_by": "",
+                    "name": "client_transport_0_1349480570181",
+                    "description": "Client transport for server",
+                    "relationships": [],
+                    "config": {
+                      "transport_type": "tcp",
+                      "backlog_full_wait": "0",
+                      "recv_spin_limit": "0.01",
+                      "backlog_size": "64mb",
+                      "hosts": [
+                        {
+                          "host": "localhost",
+                          "port": "6790",
+                          "mode": "connect"
+                        }
+                      ]
+                    }
+                  },
+                  "matchers": []
+                }
+              ],
+              "cluster_transport": {
+                "transport": {
+                  "last_modified": "0001-01-01T00:00:00Z",
+                  "last_modified_millis": 0,
+                  "last_modified_by": "",
+                  "name": "cluster_transport_1349480570181",
+                  "description": "Cluster transport for server",
+                  "relationships": [],
+                  "config": {
+                    "transport_type": "tcp",
+                    "backlog_full_wait": "0",
+                    "recv_spin_limit": "0.01",
+                    "backlog_size": "64mb",
+                    "hosts": [
+                      {
+                        "host": "localhost",
+                        "port": "6789",
+                        "mode": "connect"
+                      }
+                    ]
+                  }
+                }
+              },
+              "dr_transport": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "last_modified": "2018-03-14T07:44:05.0072456Z",
+      "last_modified_millis": 1521013445007,
+      "last_modified_by": "SrvTibcoBW_FTL",
+      "name": "ESBStoreQuorum",
+      "id": 26025,
+      "description": "",
+      "client_pserver_heartbeat": 2,
+      "client_timeout_pserver": 5,
+      "pserver_pserver_heartbeat": 0.5,
+      "pserver_timeout_pserver": 3,
+      "dr_enabled": false,
+      "primary_set": "Set 1",
+      "stores": [
+        {
+          "last_modified": "2018-03-22T14:16:34.0029602Z",
+          "last_modified_millis": 1521728194002,
+          "last_modified_by": "SrvTibcoBW_FTL",
+          "name": "DynSyncDirect",
+          "id": 56031,
+          "description": "",
+          "bytelimit": "",
+          "dynamic_durable_limit": 0,
+          "publisher_settings": {
+            "mode": "store_confirm_send"
+          },
+          "durable_templates": [
+            {
+              "name": "DynApportion",
+              "id": 56033,
+              "description": "",
+              "type": "shared",
+              "ack_settings": {
+                "mode": "sync"
+              },
+              "prefetch": 4,
+              "message_ttl": "60",
+              "durable_ttl": "60"
+            }
+          ],
+          "durables": [],
+          "replicated": -1,
+          "index": []
+        },
+        {
+          "last_modified": "2018-03-14T07:44:05.0072456Z",
+          "last_modified_millis": 1521013445007,
+          "last_modified_by": "SrvTibcoBW_FTL",
+          "name": "SyncDirect",
+          "id": 31073,
+          "description": "",
+          "bytelimit": "",
+          "dynamic_durable_limit": 0,
+          "publisher_settings": {
+            "mode": "store_confirm_send"
+          },
+          "durable_templates": [],
+          "durables": [
+            {
+              "name": "Apportion",
+              "id": 31075,
+              "description": "",
+              "type": "shared",
+              "ack_settings": {
+                "mode": "sync"
+              },
+              "prefetch": 4,
+              "message_ttl": "0"
+            },
+            {
+              "name": "bt_pensions_dynamics_updatecustomeraddress_v1",
+              "id": 56053,
+              "description": "",
+              "type": "shared",
+              "ack_settings": {
+                "mode": "sync"
+              },
+              "prefetch": 4,
+              "message_ttl": "0",
+              "interest": {
+                "type": "matcher",
+                "value": {
+                  "channel": "bt_pensions_dynamics_updatecustomeraddress_v1"
+                }
+              }
+            }
+          ],
+          "replicated": -1,
+          "index": []
+        }
+      ],
+      "pserver_sets": [
+        {
+          "name": "Set 1",
+          "id": 26027,
+          "description": "",
+          "role": "persist",
+          "pservers": [
+            {
+              "last_modified": "2018-03-14T07:44:05.0072456Z",
+              "last_modified_millis": 1521013445007,
+              "last_modified_by": "SrvTibcoBW_FTL",
+              "name": "ftlstoreserver3",
+              "id": 26033,
+              "description": "",
+              "weight": 10,
+              "client_transports": [
+                {
+                  "transport": {
+                    "last_modified": "0001-01-01T00:00:00Z",
+                    "last_modified_millis": 0,
+                    "last_modified_by": "",
+                    "name": "_client_pri_transport_ftlstoreserver3",
+                    "description": "Client primary transport",
+                    "relationships": [],
+                    "config": {
+                      "transport_type": "dtcp",
+                      "backlog_full_wait": "0",
+                      "recv_spin_limit": "0",
+                      "backlog_size": "64mb",
+                      "port": "0",
+                      "subnet_mask": "",
+                      "virtual_name": "_client_pri_transport_ftlstoreserver3_Set 1",
+                      "mode": "client"
+                    }
+                  },
+                  "matchers": []
+                }
+              ],
+              "cluster_transport": {
+                "transport": {
+                  "last_modified": "0001-01-01T00:00:00Z",
+                  "last_modified_millis": 0,
+                  "last_modified_by": "",
+                  "name": "_cluster_transport_ftlstoreserver3",
+                  "description": "Cluster transport",
+                  "relationships": [],
+                  "config": {
+                    "transport_type": "dtcp",
+                    "backlog_full_wait": "0",
+                    "recv_spin_limit": "0",
+                    "backlog_size": "256mb",
+                    "port": "0",
+                    "subnet_mask": "",
+                    "virtual_name": "_cluster_transport_ESBStoreQuorum_Set 1",
+                    "mode": ""
+                  }
+                }
+              },
+              "dr_transport": {
+                "transport": {
+                  "last_modified": "0001-01-01T00:00:00Z",
+                  "last_modified_millis": 0,
+                  "last_modified_by": "",
+                  "name": "_disaster_recovery_transport_ftlstoreserver3",
+                  "description": "Disaster recovery transport",
+                  "relationships": [],
+                  "config": {
+                    "transport_type": "tcp",
+                    "backlog_full_wait": "0",
+                    "recv_spin_limit": "0",
+                    "backlog_size": "256mb",
+                    "hosts": [
+                      {
+                        "host": "",
+                        "port": "0",
+                        "mode": "connect"
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "last_modified": "2018-03-14T07:44:05.0072456Z",
+              "last_modified_millis": 1521013445007,
+              "last_modified_by": "SrvTibcoBW_FTL",
+              "name": "ftlstoreserver1",
+              "id": 26029,
+              "description": "",
+              "weight": 10,
+              "client_transports": [
+                {
+                  "transport": {
+                    "last_modified": "0001-01-01T00:00:00Z",
+                    "last_modified_millis": 0,
+                    "last_modified_by": "",
+                    "name": "_client_pri_transport_ftlstoreserver1",
+                    "description": "Client primary transport",
+                    "relationships": [],
+                    "config": {
+                      "transport_type": "dtcp",
+                      "backlog_full_wait": "0",
+                      "recv_spin_limit": "0",
+                      "backlog_size": "64mb",
+                      "port": "0",
+                      "subnet_mask": "",
+                      "virtual_name": "_client_pri_transport_ftlstoreserver1_Set 1",
+                      "mode": "client"
+                    }
+                  },
+                  "matchers": []
+                }
+              ],
+              "cluster_transport": {
+                "transport": {
+                  "last_modified": "0001-01-01T00:00:00Z",
+                  "last_modified_millis": 0,
+                  "last_modified_by": "",
+                  "name": "_cluster_transport_ftlstoreserver1",
+                  "description": "Cluster transport",
+                  "relationships": [],
+                  "config": {
+                    "transport_type": "dtcp",
+                    "backlog_full_wait": "0",
+                    "recv_spin_limit": "0",
+                    "backlog_size": "256mb",
+                    "port": "0",
+                    "subnet_mask": "",
+                    "virtual_name": "_cluster_transport_ESBStoreQuorum_Set 1",
+                    "mode": ""
+                  }
+                }
+              },
+              "dr_transport": {
+                "transport": {
+                  "last_modified": "0001-01-01T00:00:00Z",
+                  "last_modified_millis": 0,
+                  "last_modified_by": "",
+                  "name": "_disaster_recovery_transport_ftlstoreserver1",
+                  "description": "Disaster recovery transport",
+                  "relationships": [],
+                  "config": {
+                    "transport_type": "tcp",
+                    "backlog_full_wait": "0",
+                    "recv_spin_limit": "0",
+                    "backlog_size": "256mb",
+                    "hosts": [
+                      {
+                        "host": "",
+                        "port": "0",
+                        "mode": "connect"
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "last_modified": "2018-03-14T07:44:05.0072456Z",
+              "last_modified_millis": 1521013445007,
+              "last_modified_by": "SrvTibcoBW_FTL",
+              "name": "ftlstoreserver2",
+              "id": 26031,
+              "description": "",
+              "weight": 10,
+              "client_transports": [
+                {
+                  "transport": {
+                    "last_modified": "0001-01-01T00:00:00Z",
+                    "last_modified_millis": 0,
+                    "last_modified_by": "",
+                    "name": "_client_pri_transport_ftlstoreserver2",
+                    "description": "Client primary transport",
+                    "relationships": [],
+                    "config": {
+                      "transport_type": "dtcp",
+                      "backlog_full_wait": "0",
+                      "recv_spin_limit": "0",
+                      "backlog_size": "64mb",
+                      "port": "0",
+                      "subnet_mask": "",
+                      "virtual_name": "_client_pri_transport_ftlstoreserver2_Set 1",
+                      "mode": "client"
+                    }
+                  },
+                  "matchers": []
+                }
+              ],
+              "cluster_transport": {
+                "transport": {
+                  "last_modified": "0001-01-01T00:00:00Z",
+                  "last_modified_millis": 0,
+                  "last_modified_by": "",
+                  "name": "_cluster_transport_ftlstoreserver2",
+                  "description": "Cluster transport",
+                  "relationships": [],
+                  "config": {
+                    "transport_type": "dtcp",
+                    "backlog_full_wait": "0",
+                    "recv_spin_limit": "0",
+                    "backlog_size": "256mb",
+                    "port": "0",
+                    "subnet_mask": "",
+                    "virtual_name": "_cluster_transport_ESBStoreQuorum_Set 1",
+                    "mode": ""
+                  }
+                }
+              },
+              "dr_transport": {
+                "transport": {
+                  "last_modified": "0001-01-01T00:00:00Z",
+                  "last_modified_millis": 0,
+                  "last_modified_by": "",
+                  "name": "_disaster_recovery_transport_ftlstoreserver2",
+                  "description": "Disaster recovery transport",
+                  "relationships": [],
+                  "config": {
+                    "transport_type": "tcp",
+                    "backlog_full_wait": "0",
+                    "recv_spin_limit": "0",
+                    "backlog_size": "256mb",
+                    "hosts": [
+                      {
+                        "host": "",
+                        "port": "0",
+                        "mode": "connect"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "eftl_clusters": [],
+  "formats": [
+    {
+      "last_modified": "0001-01-01T00:00:00Z",
+      "last_modified_millis": 0,
+      "last_modified_by": "",
+      "name": "bw-format",
+      "id": 21151,
+      "description": "",
+      "fields": [
+        {
+          "name": "bw-long",
+          "type": "long",
+          "size": 0
+        },
+        {
+          "name": "bw-string",
+          "type": "string",
+          "size": 0
+        },
+        {
+          "name": "bw-opaque",
+          "type": "opaque",
+          "size": 0
+        },
+        {
+          "name": "bw-inbox",
+          "type": "inbox",
+          "size": 0
+        }
+      ]
+    }
+  ],
+  "transports": [
+    {
+      "last_modified": "2018-03-22T14:18:37.7410327Z",
+      "last_modified_millis": 1521728317741,
+      "last_modified_by": "SrvTibcoBW_FTL",
+      "name": "DirectRequest_tr",
+      "description": "ftl transport description",
+      "relationships": [],
+      "id": 31055,
+      "config": {
+        "transport_type": "dtcp",
+        "backlog_full_wait": "0",
+        "recv_spin_limit": "0",
+        "backlog_size": "64mb",
+        "port": "0",
+        "subnet_mask": "",
+        "virtual_name": "SyncDirect_tg",
+        "mode": "client"
+      }
+    },
+    {
+      "last_modified": "2018-03-22T14:18:37.8060952Z",
+      "last_modified_millis": 1521728317806,
+      "last_modified_by": "SrvTibcoBW_FTL",
+      "name": "DirectResponse_tr",
+      "description": "ftl transport description",
+      "relationships": [],
+      "id": 31057,
+      "config": {
+        "transport_type": "dtcp",
+        "backlog_full_wait": "0",
+        "recv_spin_limit": "0",
+        "backlog_size": "64mb",
+        "port": "0",
+        "subnet_mask": "",
+        "virtual_name": "SyncDirect_tg",
+        "mode": "server"
+      }
+    },
+    {
+      "last_modified": "2018-03-14T07:44:05.0072456Z",
+      "last_modified_millis": 1521013445007,
+      "last_modified_by": "SrvTibcoBW_FTL",
+      "name": "_GroupClientTport",
+      "description": "",
+      "relationships": [
+        {
+          "transport": "_GroupServerTport1"
+        }
+      ],
+      "id": 1027,
+      "config": {
+        "transport_type": "dtcp",
+        "backlog_full_wait": "0",
+        "recv_spin_limit": "0.01",
+        "backlog_size": "64mb",
+        "port": "0",
+        "subnet_mask": "",
+        "virtual_name": "_Primary_Group_Server_VName",
+        "mode": "client"
+      }
+    },
+    {
+      "last_modified": "2018-03-14T07:44:05.0072456Z",
+      "last_modified_millis": 1521013445007,
+      "last_modified_by": "SrvTibcoBW_FTL",
+      "name": "_GroupServerTport1",
+      "description": "",
+      "relationships": [
+        {
+          "transport": "_GroupClientTport"
+        }
+      ],
+      "id": 1025,
+      "config": {
+        "transport_type": "dtcp",
+        "backlog_full_wait": "0",
+        "recv_spin_limit": "0.01",
+        "backlog_size": "64mb",
+        "port": "0",
+        "subnet_mask": "",
+        "virtual_name": "_Primary_Group_Server_VName",
+        "mode": "server"
+      }
+    },
+    {
+      "last_modified": "2018-03-14T07:44:05.0072456Z",
+      "last_modified_millis": 1521013445007,
+      "last_modified_by": "SrvTibcoBW_FTL",
+      "name": "bw-tport",
+      "description": "",
+      "relationships": [],
+      "id": 21153,
+      "config": {
+        "transport_type": "dtcp",
+        "backlog_full_wait": "0",
+        "recv_spin_limit": "0",
+        "backlog_size": "64mb",
+        "port": "0",
+        "subnet_mask": "",
+        "mode": ""
+      }
+    }
+  ],
+  "connector_lists": [
+    {
+      "name": "__GroupClient_@_default_@__Common",
+      "id": 0,
+      "description": "",
+      "connectors": [
+        {
+          "transport": "_GroupClientTport",
+          "receive": true,
+          "receive_inbox": true,
+          "send": true,
+          "send_inbox": true
+        }
+      ]
+    },
+    {
+      "name": "_bwadmin_@_default_@_bwadmin-endpoint",
+      "id": 0,
+      "description": "",
+      "connectors": [
+        {
+          "transport": "bw-tport",
+          "receive": true,
+          "receive_inbox": true,
+          "send": true,
+          "send_inbox": true
+        }
+      ]
+    },
+    {
+      "name": "__GroupServer_@_SingleGroupServer_@__Common",
+      "id": 21143,
+      "description": "",
+      "connectors": [
+        {
+          "transport": "_GroupServerTport1",
+          "receive": true,
+          "receive_inbox": true,
+          "send": true,
+          "send_inbox": true
+        }
+      ]
+    },
+    {
+      "name": "_bwapplication_@_default_@_SyncResponse_ep",
+      "id": 0,
+      "description": "",
+      "connectors": [
+        {
+          "transport": "DirectResponse_tr",
+          "receive": true,
+          "receive_inbox": true,
+          "send": true,
+          "send_inbox": true
+        }
+      ]
+    },
+    {
+      "name": "_bwapplication_@_default_@_SyncRequestDyn_ep",
+      "id": 0,
+      "description": "",
+      "connectors": [
+        {
+          "transport": "DirectRequest_tr",
+          "receive": true,
+          "receive_inbox": true,
+          "send": true,
+          "send_inbox": true
+        }
+      ]
+    },
+    {
+      "name": "_bwapplication_@_default_@_SyncRequest_ep",
+      "id": 0,
+      "description": "",
+      "connectors": [
+        {
+          "transport": "DirectRequest_tr",
+          "receive": true,
+          "receive_inbox": true,
+          "send": true,
+          "send_inbox": true
+        }
+      ]
+    },
+    {
+      "name": "_bwapplication_@_default_@_SyncResponseDyn_ep",
+      "id": 0,
+      "description": "",
+      "connectors": [
+        {
+          "transport": "DirectResponse_tr",
+          "receive": true,
+          "receive_inbox": true,
+          "send": true,
+          "send_inbox": true
+        }
+      ]
+    }
+  ],
+  "product_data": {
+    "_ftlui": {
+      "transport_groups": {
+        "DirectRequest_tr": "SyncDirect_tg",
+        "DirectResponse_tr": "SyncDirect_tg"
+      }
+    }
+  }
+}
